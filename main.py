@@ -48,7 +48,7 @@ def qr2specgram(qr_data, start_freq, end_freq, freq_step, step_scale, char_speed
         wav = [int(x) for x in wav]
         wav_bin = struct.pack("h" * len(wav), *wav)
 
-        w = wave.open("qrcode_to_specgram.wav", "w")
+        w = wave.open("qrcode.wav", "w")
         p = (1, 2, fs, len(wav_bin), 'NONE', 'not compressed')
         w.setparams(p)
         w.writeframes(wav_bin)
